@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Fortune Teller</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/fortune.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fortune Teller</a>
+         </div>
+         <div>
+            <ul class="nav navbar-nav">
+               <li class="active" id="get-started-nav"><a href="#">Get Started</a></li>
+               <li id="events-nav"><a href="#">Events</a></li>
+               <li id="show-future-nav"><a href="#">Show Future</a></li>
+            </ul>
+         </div>
+      </nav>
+    </div>
+
+    <div id="get-started-panel">
+      <div class="container">
+        <h2>Here's how to use this tool</h2>
+      </div>
+    </div>
+
+
+    <div id="events-panel">
+      <div class="container jsontotable" id="myjsontable"></div>
+
+      <div class="container">
+        <button type="button" id="newButton"  class="btn btn-primary">Add Event</button>
+      </div>
+      <br>
+      <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-body">
+          
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="ffname" class="col-sm-2 control-label">Name</label>
+                  <div class="col-sm-3">
+                    <input type="text" class="form-control" id="ffname" placeholder="Rent, Paycheck, etc.">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ffname" class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-3">  
+                      <select class="form-control" id="fftype">
+                        <option>Bill</option>
+                        <option>Payment</option>
+                        <option>Income</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ffamount" class="col-sm-2 control-label">Amount</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="ffamount" placeholder="235.00">
+                  </div>
+                </div>
+
+                <div class="form-group" >
+                  <label for="ffdate" class="col-sm-2 control-label">Date</label>
+                  <div class="col-sm-3">
+                    <input data-provide="datepicker" class="form-control" id="ffdate" value="Click to Choose" data-date-autoclose="true">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ffdate" class="col-sm-2 control-label">How Often?</label>
+                  <div class="col-sm-3">
+                    <select class="form-control" id="fffreq">
+                      <option>Once</option>
+                      <option>Every week</option>
+                      <option>Every two weeks</option>
+                      <option>Every month</option>
+                      <option>Twice a month</option>
+                      <option>Every other month</option>
+                      <option>Once a quarter</option>
+                      <option>Once a year</option>
+                    </select>
+                  </div>
+                </div>
+
+              </form>
+          </div>
+        </div>
+
+
+    </div>
+
+    <div id="future-panel">
+      <div class="container">
+        <h2>Here's where we show the future</h2>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/moment-recur.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/mindmup-editabletable.js"></script>
+    <script src="js/jquery.jsontotable.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/custom2.js"></script>
+
+  </body>
+</html>
+
+<!-- Old snippets  -->
+
+   <!--div class="container">
+      <div id="newdiv">
+        <p>Click on this to add a new row to the table.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div id="newdiv2">
+        <p>Click here to see a dialogue box.</p>
+      </div>
+    </div-->
+
+
+
+<!--    <div class="container">
+      <div class="alert alert-error hide">
+          That would cost too much
+      </div>
+            <table id="mainTable" class="table table-striped">
+                <thead><tr><th>Name</th><th>Cost</th><th>Profit</th><th>Fun</th></tr></thead>
+                <tbody>
+                  <tr><td>Car</td><td>100</td><td>200</td><td>0</td></tr>
+                  <tr><td>Bike</td><td>330</td><td>240</td><td>1</td></tr>
+                  <tr><td>Plane</td><td>430</td><td>540</td><td>3</td></tr>
+                  <tr><td>Yacht</td><td>100</td><td>200</td><td>0</td></tr>
+                  <tr><td>Segway</td><td>330</td><td>240</td><td>1</td></tr>
+                </tbody>
+                <tfoot><tr><th><strong>TOTAL</strong></th><th></th><th></th><th></th></tr></tfoot>
+            </table>
+    </div>
+
+-->
+
+             <!--li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                   Edit Events
+                   <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                   <li><a href="#">Bills</a></li>
+                   <li><a href="#">Loans</a></li>
+                   <li><a href="#">Income</a></li>
+                   <li class="divider"></li>
+                   <li><a href="#">How to budget</a></li>
+                   <li class="divider"></li>
+                   <li><a href="#">Tell your friends</a></li>
+                </ul>
+             </li-->
