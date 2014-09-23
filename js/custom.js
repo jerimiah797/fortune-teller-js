@@ -6,15 +6,16 @@ $(document).ready(function() {
 	$("#events-panel").hide();	
 	$("#future-panel").hide();
 
-	$("#newButton").click(function() {
-		console.log("adding the row");
-		var event = new RecurringEvent("Taxes", "bill", 200, "09", "yearly");
-		console.log(event)
-		mydata.push(event);
-		$("#myjsontable").empty();
-		$.jsontotable(data, { id: '#myjsontable', header: true,  className: 'table table-striped'  });
-		console.log("Added. Did it work?  "+data.length);
-	});
+	// $("#newButton").click(function() {
+	// 	console.log("adding the row");
+	// 	var event = new RecurringEvent("Taxes", "bill", 200, "09", "yearly");
+	// 	console.log(event)
+	// 	mydata.push(event);
+	// 	$("#myjsontable").empty();
+	// 	$.jsontotable(data, { id: '#myjsontable', header: true,  className: 'table table-striped'  });
+	// 	console.log("Added. Did it work?  "+data.length);
+	// });
+	$("#newButton").click(add_event())
 
 	$("#get-started-nav").click(function() {
 		console.log("activating get started panel");
@@ -47,6 +48,18 @@ $(document).ready(function() {
 	});
 
 
+	// jQuery.fn.extend({
+	// 	Event: function(name, type, amount, date, frequency){
+	// 		this.name = name;
+	// 		this.type = type;
+	// 		this.amount = amount;
+	// 		this.date = date;
+	// 		this.frequency = frequency;
+	// 		console.log("made a new Event")
+	// 	}
+	// 	return this;
+	// })
+
 	function RecurringEvent(name, type, amount, date, frequency){
 		this.name = name;
 		this.type = type;
@@ -73,7 +86,9 @@ $(document).ready(function() {
 		return a;
 	}
 	
-	
+	function add_event(event){
+		a.events.push(event)
+	}
 
 	/* create some test data */
 	mydata = init_mydata();
